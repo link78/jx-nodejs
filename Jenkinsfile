@@ -1,0 +1,21 @@
+pipeline {
+  agent any 
+  tools {nodejs "node"}
+  stages {
+    stage('cloning git') {
+      steps {
+        git 'https://https://github.com/link78/jx-nodejs.git'
+       }
+     }
+   stage('Build') {
+    steps {
+        sh 'npm install'
+        }
+      }
+    stage('Install nodemon'){
+       steps {
+        sh 'npm install nodemon'
+        }
+      }
+    }
+  }
