@@ -1,7 +1,7 @@
 pipeline {
   agent any 
   stages {
-    stage('cloning git') {
+    stage('cloning git repo') {
       steps {
         git 'https://https://github.com/link78/jx-nodejs.git'
        }
