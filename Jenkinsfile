@@ -6,7 +6,7 @@ node {
          // This step should not normally be used in your script. Consult the inline help for details.
 docker.withRegistry('https://registry.hub.docker.com','Burk1212') {
 
-  MAGE_NAME="burk1212/jx-cicd-nodejs:${BUILD_ID}"
+  IMAGE_NAME="burk1212/jx-cicd-nodejs:${BUILD_ID}"
   def customImage = docker.build(IMAGE_NAME)
     
     customImage.push()
