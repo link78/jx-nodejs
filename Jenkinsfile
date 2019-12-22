@@ -19,7 +19,7 @@ docker.withRegistry('https://registry.hub.docker.com','Burk1212') {
  // }
   stage('Running latest images on docker'){
     
-      sh label: '', script: 'docker run --name=simple -d -p 7000:8000 burk1212/jx-cicd-nodejs' 
+    sh label: '', script: 'docker run --name=simple -d -p 7000:8000 burk1212/jx-cicd-nodejs:${BUILD_ID}' 
   }
  
   
