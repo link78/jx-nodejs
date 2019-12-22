@@ -14,7 +14,7 @@ docker.withRegistry('https://registry.hub.docker.com','Burk1212') {
   }
      stage('Remove old image container'){
     
-      sh label: '', script: 'docker rm -f cicd-test1' 
+      sh label: '', script: 'docker rm -f cicd-test' 
       
   }
   stage('Running latest images on docker'){
