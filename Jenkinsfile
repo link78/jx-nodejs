@@ -12,14 +12,14 @@ docker.withRegistry('https://registry.hub.docker.com','Burk1212') {
     customImage.push('latest')
         }
   }
-     //stage('Remove old image container'){
+     stage('Remove old image container'){
     
-     // sh label: '', script: 'docker rm -f simple' 
+      sh label: '', script: 'docker rm -f cicd-test1' 
       
- // }
+  }
   stage('Running latest images on docker'){
     
-    sh label: '', script: 'docker run --name=cicd-test1 -d -p 7500:8000 burk1212/cicd-node-test' 
+    sh label: '', script: 'docker run --name=cicd-test -d -p 7500:8000 burk1212/cicd-node-test' 
   }
  
   
