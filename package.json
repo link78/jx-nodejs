@@ -6,5 +6,9 @@
   "scripts": {
     "test": "echo \"no test specified\" && exit 0",
     "start": "nodemon server.js"
+  },
+  "dependencies": {
+     "nodemon": "^1.19.1"
+
   }
 }
