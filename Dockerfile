@@ -1,4 +1,4 @@
-FROM node:9-slim
+FROM node:alpine
 ENV PORT 8000
 EXPOSE 8000
 WORKDIR /usr/src/app
