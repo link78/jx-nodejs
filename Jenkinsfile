@@ -25,7 +25,11 @@ pipeline {
         }
       }
     }
-
+    stage('Removing Previous Container Name'){
+      steps{
+      sh label: '',script: 'docker rm -f jx'
+      }
+    }
     stage('Deploy App') {
       steps { 
         
