@@ -14,19 +14,12 @@ pipeline {
       }
     }
 
-    stage('Build image') {
-      steps{
-        script {
-          dockerImage = docker.build("burk1212/jx-nodejs:$BUILD_NUMBER"
-                   
-        }
-      }
-    }
 
-    stage('Push Image') {
+    stage('Build and Push Image') {
       steps{
         script {
           docker.withRegistry( "https://registry.hub.docker.com","DOCKER_ID" ) {
+            dockerImage = docker.build("burk1212/jx-nodejs:${env.BUILD_NUMBER}")
             dockerImage.push("latest")
           }
         }
