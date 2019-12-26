@@ -35,11 +35,10 @@ pipeline {
 
     stage('Deploy App') {
       steps { 
-        sh 'docker run --name jx -d -p 8095:8000 burk1212/jx-nodejs'
-        
+        script {
+         'docker run --name jx -d -p 8095:8000 burk1212/jx-nodejs'
+        }
       }
     }
-
-  
  }
 }
