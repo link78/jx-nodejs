@@ -15,7 +15,7 @@ pipeline {
     stage('build image'){
         steps{
             container('nodejs') {
-            sh "docker login -u burk1212 -p 78152587Roro"
+            sh "docker login -u burk1212 -p xyyxxyxyyx"
             sh "docker build -t burk1212/my-nodejs-app ."
         }
      }
