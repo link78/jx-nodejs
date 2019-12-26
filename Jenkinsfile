@@ -1,7 +1,6 @@
 pipeline {
 
   environment {
-    registry = "burk1212/jx-nodejs"
     dockerImage = ""
   }
 
@@ -18,7 +17,8 @@ pipeline {
     stage('Build image') {
       steps{
         script {
-          dockerImage = docker.build registry + ":$BUILD_NUMBER"
+          dockerImage = docker.build("burk1212/jx-nodejs:$BUILD_NUMBER"
+                   
         }
       }
     }
