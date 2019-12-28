@@ -2,7 +2,7 @@ apiVersion: v1
 kind: PersistentVolume
 metadata:
   name: pv-web
-  namespace: demo
+  namespace: kube
 spec:
   capacity:
     storage: 1Gi
@@ -18,7 +18,7 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: pvc-web
-  namespace: demo
+  namespace: kube
 spec:
   accessModes:
     - ReadWriteOnce
@@ -28,12 +28,13 @@ spec:
       storage: 1Gi
 ---
 apiVersion: apps/v1
+kind: Deployment
 metadata:
   creationTimestamp: null
   labels:
     app: web
   name: web-nodejs
-  namespace: demo
+  namespace: kube
 spec:
   replicas: 2
   selector:
@@ -64,7 +65,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: web-svc
-  namespace: demo
+  namespace: kube
 spec:
   selector:
     app: web
