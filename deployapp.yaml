@@ -14,7 +14,7 @@ spec:
     path: /data/www
   persistentVolumeReclaimPolicy: Retain
 ---
-ipiVersion: v1
+apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: pvc-web
