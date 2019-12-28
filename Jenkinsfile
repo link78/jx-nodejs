@@ -27,15 +27,15 @@ pipeline {
         }
       }
     }
-    stage('Removing Previous Container Name'){
-      steps{
-      sh label: '',script: 'docker rm -f jx'
-      }
-    }
+   // stage('Removing Previous Container Name'){
+    //  steps{
+    //  sh label: '',script: 'docker rm -f jx'
+     // }
+   // }
     stage('Deploy App') {
       steps { 
         
-       sh label: '',script: 'docker run --name jx -d -p 8095:8000 burk1212/jx-nodejs'
+       sh label: '',script: 'docker run --name jx -d -p 8095:8000 burk1212/k8sdemo'
         
       }
     }
