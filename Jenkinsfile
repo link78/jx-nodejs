@@ -2,6 +2,7 @@ pipeline {
 
   environment {
     dockerImage = ""
+    DOCKER_IMAGE_NAME= "burk1212/k8sdemo"
   }
 
   agent any
@@ -19,7 +20,8 @@ pipeline {
       steps{
         script {
           docker.withRegistry( "https://registry.hub.docker.com","DOCKER_ID" ) {
-            dockerImage = docker.build("burk1212/jx-nodejs:${env.BUILD_NUMBER}")
+            dockerImage = docker.build(DOCKER_IMAGE_NAME)
+            dockerImage.push("${env.BUILD_NUMBER}")                         
             dockerImage.push("latest")
           }
         }
@@ -35,6 +37,13 @@ pipeline {
         
        sh label: '',script: 'docker run --name jx -d -p 8095:8000 burk1212/jx-nodejs'
         
+      }
+    }
+    stage('Deploy App to K8s') {
+      steps {
+        script {
+          kubernetesDeploy(configs: "deployapp.yaml", kubeconfigId: "kubeconfig_id",enableConfigSubstitution: true)
+        }
       }
     }
  }
