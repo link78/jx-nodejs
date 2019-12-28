@@ -53,7 +53,7 @@ spec:
         - containerPort: 8000
         volumeMounts:
         - name: web-data
-          mountPath: /usr/srv/app
+          mountPath: /usr/src/app
       volumes:
       - name: web-data
         persistentVolumeClaim:
