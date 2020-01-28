@@ -8,7 +8,6 @@
     "start": "node server.js"
   },
   "dependencies": {
-     "nodemon": "^1.19.1"
-
+    "nodemon": "^1.19.1"
   }
 }
