@@ -27,11 +27,11 @@ pipeline {
         }
       }
     }
-    stage('Removing Previous Container Name'){
-      steps{
-      sh label: '',script: 'docker rm -f jx'
-      }
-    }
+   // stage('Removing Previous Container Name'){
+    //  steps{
+   //   sh label: '',script: 'docker rm -f jx'
+   //   }
+  //  }
     stage('Deploy App') {
       steps { 
         
@@ -39,12 +39,12 @@ pipeline {
         
       }
     }
-    stage('Deploy App to K8s') {
-      steps {
-        script {
-          kubernetesDeploy(configs: "deployapp.yaml", kubeconfigId: "kubeconfig_id",enableConfigSubstitution: true)
-        }
-      }
-    }
+  //  stage('Deploy App to K8s') {
+   //   steps {
+    //    script {
+      //    kubernetesDeploy(configs: "deployapp.yaml", kubeconfigId: "kubeconfig_id",enableConfigSubstitution: true)
+      //  }
+     // }
+   // }
  }
 }
