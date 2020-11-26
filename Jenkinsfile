@@ -16,7 +16,7 @@ pipeline {
             sh "docker push $DOCKER_ID/jx_testnodejs" 
     }
     stage('Running nodejs app'){
-      sh 'docker run --name ng -d -p 8090:80 $DOCKER_ID/jx_testnodejs'
+      sh 'docker run --name ng -d -p 8000:80 $DOCKER_ID/jx_testnodejs'
     }
   }
 }
