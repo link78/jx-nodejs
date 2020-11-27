@@ -19,11 +19,11 @@ pipeline {
                 sh "docker push $DOCKER_ID/jx_testnodejs" 
             }
         }
-        stage('Remove old container') {
-            steps {
-                sh 'runing is running now'
-            }
-        }
+     //   stage('Remove old container') {
+     //       steps {
+      //          sh 'docker rm -f `docker ps -aq`'
+      //      }
+    //    }
         stage('Deploy container') {
             steps {
                 sh 'docker run --name ng -d -p 8020:8000 $DOCKER_ID/jx_testnodejs'
