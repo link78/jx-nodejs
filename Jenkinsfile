@@ -21,7 +21,7 @@ pipeline {
         }
         stage('Remove old container') {
             steps {
-         
+                sh 'runing is running now'
             }
         }
         stage('Deploy container') {
