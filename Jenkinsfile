@@ -21,7 +21,9 @@ pipeline {
         }
         stage('Remove old container') {
             steps {
-                sh 'docker rm -f ng'
+                sh 'docker rm -f ng-dev'
+	        sh 'docker rm -f ng-qa'
+		sh 'docker rm -f ng'
             }
         }
         stage('Deploy to dev') {
