@@ -26,7 +26,7 @@ pipeline {
         }
         stage('Deploy container') {
             steps {
-                sh 'docker run --name ng -d -p 8000:8000 $DOCKER_ID/jx_testnodejs'
+                sh 'docker run --name ng -d -p 8020:8000 $DOCKER_ID/jx_testnodejs'
                 sh 'docker ps'
             }
         }
