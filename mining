@@ -105,7 +105,7 @@ sudo su
 
 
 
-./bin/start mine mining_addr nhk1rgobYjFKoR3FQz1-EhTcJ3Y2XKNfocfo1xKQK1o peer 188.166.200.45 peer 188.166.192.169 peer 163.47.11.64 peer 139.59.51.59 peer 138.197.232.192
+./bin/start mine mining_addr MB2n80JeasrBymmVd3rV5ye6NC-k4K-Wv3yuSfgdlcE peer 188.166.200.45 peer 188.166.192.169 peer 163.47.11.64 peer 139.59.51.59 peer 138.197.232.192
 
 
 
