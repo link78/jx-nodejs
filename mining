@@ -1,0 +1,122 @@
+Txt file shown at video
+## modify file size to 1 million only 
+
+
+
+sudo nano /etc/security/limits.conf
+
+
+
+## add the follwing to the file 
+
+
+
+* soft     nproc          1000000
+
+* hard     nproc          1000000
+
+* soft     nofile         1000000
+
+* hard     nofile         1000000
+
+root soft     nproc          1000000
+
+root hard     nproc          1000000
+
+root soft     nofile         1000000
+
+root hard     nofile         1000000
+
+ 
+
+## to save file click 
+
+cntrl o
+
+## then click 
+
+enter 
+
+## then click 
+
+cntrl x
+
+
+
+##now open the follwing file 
+
+
+
+sudo nano /etc/pam.d/common-session
+
+
+
+## add the following 
+
+
+
+session required      pam_limits.so
+
+
+
+## to save file click 
+
+cntrl o
+
+## then click 
+
+enter 
+
+## then click 
+
+cntrl x
+
+
+
+### now log as root 
+
+sudo su 
+
+then password 
+
+
+
+## now check file limit 
+
+ulimit -n
+
+
+
+## if it is 1000000 you are ready for minning 
+
+
+
+##now let us download arweave for ubunto 
+
+##then extract the files
+
+##and now open terminal from inside the extracted folder
+
+## log as root 
+
+sudo su 
+
+##now run the follwing command to start minning
+
+
+
+./bin/start mine mining_addr nhk1rgobYjFKoR3FQz1-EhTcJ3Y2XKNfocfo1xKQK1o peer 188.166.200.45 peer 188.166.192.169 peer 163.47.11.64 peer 139.59.51.59 peer 138.197.232.192
+
+
+
+##if you got this error 
+
+##libtinfo.so.5: cannot open shared object file: No such file or directory
+
+##you need to install the library as 
+
+sudo apt install libtinfo5
+
+
+
+## after finished run the miner again 
